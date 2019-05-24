@@ -1,0 +1,7 @@
+# 服务端口号:
+    micro-eureka:    8000
+    micro-eureka:    8010
+    micro-zuul:      9000
+    micro-zuul:      9010
+    micro-client01:  7000
+    micro-client02:  7010

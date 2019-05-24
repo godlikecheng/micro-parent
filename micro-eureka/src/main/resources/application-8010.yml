@@ -1,0 +1,38 @@
+# 服务端口号
+server:
+  port: 8010
+# eureka 基本信息配置
+spring: 
+ application: 
+  name: eureka-server
+eureka:
+  instance:
+    # 服务名以"IP地址:服务端口号"来显示
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipaddress}:${server.port}
+    # Eureka客户端向服务端发送心跳的时间间隔，单位为毫秒（客户端告诉服务端自己会按照该规则）
+    lease-renewal-interval-in-seconds: 10000
+    # Eureka服务端在收到最后一次心跳之后等待的时间上限，单位为毫秒，超过则剔除（客户端告诉服务端按照此规则等待自己）
+    lease-expiration-duration-in-seconds: 30000
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8000/eureka/,http://127.0.0.1:8010/eureka/
+    # 是否需要注册自己(集群时设置为true)
+    register-with-eureka: true
+    # 是否需要检索服务(集群时设置为true)
+    fetch-registry: true
+    # eureka client间隔多久去拉取服务注册信息， 默认是30秒
+    registry-fetch-interval-seconds: 30
+  server:
+    # 测试时关闭自我保护机制，保证不可用服务及时踢出
+    enable-self-preservation: false
+    # 剔除失效服务间隔
+    eviction-interval-timer-in-ms: 60000
+    
+    
+
+    
+    
+    
+    
+    

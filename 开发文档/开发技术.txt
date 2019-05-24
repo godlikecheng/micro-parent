@@ -1,0 +1,44 @@
+# 前端使用技术:
+    (1) JavaScript    √
+    (2) Vue           √
+    (3) BootStrap     √
+    (4) jQuery        √
+    (5) echarts       √
+
+# 后端使用技术:
+    (1) Java          √
+    (2) SpringBoot    √
+    (3) WebSocket     √
+    (4) Logger        √
+    (5) Restful       √
+    (6) Token         √
+    (7) SSO           √
+    (8) Swagger       √
+
+# 数据库使用技术:
+    (1) MySQL         √
+    (2) Oracle        √
+    (3) PostgresSQL
+    (4) Redis         √
+
+# 服务器使用技术:
+    (1) Linux         √
+    (2) jenkins
+    (3) Netty         √
+    (4) Nginx
+
+# 架构使用技术:
+    (1) Eureka        √
+    (2) Zuul          √
+    (3) Hystrix
+    (4) Ribbon
+    (5) Fegin
+
+# 大数据技术:
+    (1) Kafka
+
+# 其他技术:
+    (1) GitHub        √
+
+
+
