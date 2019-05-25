@@ -6,6 +6,7 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.codec.Utf8;
 import org.springframework.stereotype.Component;
 
 import com.netflix.zuul.ZuulFilter;
@@ -30,8 +31,8 @@ public class TokenFilter extends ZuulFilter {
 	 */
 	@Override
 	public boolean shouldFilter() {
-		System.out.println("过滤生效");
-		return false;
+		System.out.println("--------------------Zuul过滤拦截生效--------------------");
+		return true;  // 此处设置为true则run()方法执行, 设置为false则run()方法不执行
 	}
 
 	/*
@@ -40,7 +41,7 @@ public class TokenFilter extends ZuulFilter {
 	@Override
 	public Object run() {
 
-		System.out.println("开启拦截功能!!!");
+		System.out.println("--------------------Zuul过滤拦截开始--------------------");
 
 		// 获取上下文
 		RequestContext currentContext = RequestContext.getCurrentContext();
@@ -48,16 +49,18 @@ public class TokenFilter extends ZuulFilter {
 		HttpServletRequest request = currentContext.getRequest();
 		// 获取token的时候,一般从请求头中拿到
 		String userToken = request.getParameter("userToken");
+		userToken = "111";  // 正式拦截中将此行删除
 		if (StringUtils.isEmpty(userToken)) {
 			// 不会继续执行了.不会去调用服务接口,网关服务直接响应给客户端
 			currentContext.setSendZuulResponse(false);
 			currentContext.setResponseStatusCode(401);
-			currentContext.setResponseBody("userToken is null");
+			currentContext.setResponseBody("用户的Token令牌不能为空");
 			return null;
 		}
 
 		// 否则正常执行业务逻辑.....
 		System.out.println("网关服务器端口:" + serverPort);
+		System.out.println("--------------------Zuul过滤拦截结束--------------------");
 		return null;
 
 	}

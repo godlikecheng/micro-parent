@@ -79,7 +79,7 @@
     </repositories>
 
     <build>
-        <!-- 打成War包的名称 -->
+        <!-- 打成jar包的名称 -->
         <finalName>micro-client01</finalName>
         <plugins>
             <!-- 打包插件 -->

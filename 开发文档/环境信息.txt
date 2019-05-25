@@ -18,8 +18,8 @@
     Swagger: http://127.0.0.1:9000/swagger-ui.html#/
 
     # 测试通过Zuul访问服务
-    Zuul01: http://127.0.0.1:8001/micro-client01/getTest
-    Zuul02: http://127.0.0.1:8001/micro-client02/getTest2
+    Zuul01: http://127.0.0.1:9000/micro-client01/getTest
+    Zuul02: http://127.0.0.1:9010/micro-client02/getTest2
 
     # 测试Ribbon的负载均衡
     1. 开启多个服务(如开启zuul01两个服务)
