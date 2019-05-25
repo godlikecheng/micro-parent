@@ -27,9 +27,9 @@ zuul:
     socket-timeout-millis: 60000
 #  # 配置Zuul的路由
 #  routes:
-#    test-01: 
-#      # 以 /api-test/访问转发到会员服务
-#      path: /api-test/**
+#    cases-01:
+#      # 以 /api-cases/访问转发到会员服务
+#      path: /api-cases/**
 #      # 服务别名 zuul网关默认整合ribbon, 自动实现负载均衡轮询效果.
 #      serviceId: micro-client02
       

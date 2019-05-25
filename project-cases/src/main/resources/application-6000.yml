@@ -1,16 +1,15 @@
 # 服务端口号
 server:
-  port: 9000
+  port: 6000
 # Zuul网关名称
 spring: 
  application: 
-  name: zuul-server
+  name: project-cases
 # Eureka的配置
 eureka:
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:8000/eureka/,http://127.0.0.1:8010/eureka/
-
   instance:
     # 服务名以"IP地址:服务端口号"来显示
     prefer-ip-address: true
@@ -25,14 +24,7 @@ zuul:
   host:
     connect-timeout-millis: 10000
     socket-timeout-millis: 60000
-#  # 配置Zuul的路由
-#  routes:
-#    cases-01:
-#      # 以 /api-cases/访问转发到会员服务
-#      path: /api-cases/**
-#      # 服务别名 zuul网关默认整合ribbon, 自动实现负载均衡轮询效果.
-#      serviceId: micro-client01
-      
+    
 # Hystrix的配置
 # 开启Hystrix断路器
 feign:
@@ -57,4 +49,7 @@ ribbon:
   # 指的是建立连接后从服务器读取到可用资源所用的时间。
   ConnectTimeout: 5000
 
+# Swagger扫描包
+swagger:
+  base-package: project.cases.controller
 

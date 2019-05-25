@@ -7,9 +7,22 @@
     micro-client01:  7001
     micro-client02:  7010
     micro-client02:  7011
+    project-cases:   6000
     nginx:           80
+    mysql:           3306
+    oracle:          1521
+    redis:           6379
+    postgresql:      5432
+    svn:             8080
+    jenkins:         8999
 
 # 访问地址:
+
+    # Jenkins访问地址
+    127.0.0.1:8999
+    用户名: root
+    密码: root
+
     # Eureka的访问地址
     Eureka01: http://127.0.0.1:8000/
     Eureka02: http://127.0.0.1:8010/
@@ -48,5 +61,8 @@
     5. ./nginx.exe -s reload                   // 重新启动
     6. tasklist /fi "imagename eq nginx.exe"   // 检测nginx是否成功启动
     7. taskkill /pid  进程号 -t -f              // 强行杀死Nginx端口
+
+# 账户信息
+
 
 

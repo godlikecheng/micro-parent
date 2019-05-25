@@ -3,26 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>kim.chengcheng</groupId>
-    <!-- 父类 MAVEN -->
-    <artifactId>micro-parent</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <!-- 子类MAVEN -->
-    <modules>
-        <module>micro-eureka</module>
-        <module>micro-zuul</module>
-        <module>micro-client01</module>
-        <module>micro-client02</module>
-        <module>project-cases</module>
-    </modules>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.1.RELEASE</version>
     </parent>
+
+    <artifactId>project-cases</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>micro-eureka Maven Webapp</name>
+    <url>http://www.example.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,37 +24,20 @@
         <scope>import</scope>
     </properties>
 
-    <!-- 管理依赖 -->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.M7</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     <dependencies>
         <!-- SpringBoot整合Web组件 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- swagger-spring-boot 这一个依赖就等于之前swagger中的两个依赖 -->
         <dependency>
-            <groupId>com.spring4all</groupId>
-            <artifactId>swagger-spring-boot-starter</artifactId>
-            <version>1.7.0.RELEASE</version>
-        </dependency>
-        <!-- SpringBoot整合hystrix断路器 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
+
     <!-- 注意： 这里必须要添加， 否者各种依赖有问题 -->
     <repositories>
         <repository>
@@ -74,5 +48,20 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+
     </repositories>
+
+    <build>
+        <!-- 打成war包的名称 -->
+        <finalName>project-cases</finalName>
+        <plugins>
+            <!-- 打包插件 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
 </project>
