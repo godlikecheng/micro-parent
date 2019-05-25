@@ -4,4 +4,49 @@
     micro-zuul:      9000
     micro-zuul:      9010
     micro-client01:  7000
+    micro-client01:  7001
     micro-client02:  7010
+    micro-client02:  7011
+    nginx:           80
+
+# 访问地址:
+    # Eureka的访问地址
+    Eureka01: http://127.0.0.1:8000/
+    Eureka02: http://127.0.0.1:8010/
+
+    # 测试Swagger的API文档
+    Swagger: http://127.0.0.1:9000/swagger-ui.html#/
+
+    # 测试通过Zuul访问服务
+    Zuul01: http://127.0.0.1:8001/micro-client01/getTest
+    Zuul02: http://127.0.0.1:8001/micro-client02/getTest2
+
+    # 测试Ribbon的负载均衡
+    1. 开启多个服务(如开启zuul01两个服务)
+    2. Zuul01: http://127.0.0.1:8001/micro-client01/getTest
+
+    # 测试Hystrix的熔断机制
+    http://127.0.0.1:9000/micro-client01/HystrixTest
+
+    # Fegin的RPC远程调用测试
+    http://127.0.0.1:7000/getTest2
+    http://127.0.0.1:9000/micro-client01/getTest2
+
+# Nginx的开启
+
+    # Nginx访问地址:
+    127.0.0.1:80
+
+    # Nginx配置Zuul集群测试
+    http://127.0.0.1/micro-client01/getTest
+
+    # Nginx的操作:
+    1. cd D:\Nginx\nginx-1.15.3
+    2. start nginx.exe 或 start nginx          // 启动Nginx
+    3. ./nginx.exe -s stop                     // 不完整退出
+    4. ./nginx.exe -s quit                     // 完整退出
+    5. ./nginx.exe -s reload                   // 重新启动
+    6. tasklist /fi "imagename eq nginx.exe"   // 检测nginx是否成功启动
+    7. taskkill /pid  进程号 -t -f              // 强行杀死Nginx端口
+
+

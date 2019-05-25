@@ -25,17 +25,18 @@
     (1) Linux         √
     (2) jenkins
     (3) Netty         √
-    (4) Nginx
+    (4) Nginx         √
 
 # 架构使用技术:
     (1) Eureka        √
-    (2) Zuul          √
-    (3) Hystrix
-    (4) Ribbon
-    (5) Fegin
+    (2) Zuul
+    (3) Hystrix       √
+    (4) Ribbon        √
+    (5) Fegin         √
 
-# 大数据技术:
-    (1) Kafka
+# 大数据技术(后期引进):
+    (1) Hadoop
+    (2) Kafka
 
 # 其他技术:
     (1) GitHub        √

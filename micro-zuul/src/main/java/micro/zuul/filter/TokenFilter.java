@@ -13,15 +13,15 @@ import com.netflix.zuul.context.RequestContext;
 
 /**
  * 微服务 - Token拦截类
- * 
+ *
  * @author 张宜成
  */
 
 @Component
 public class TokenFilter extends ZuulFilter {
-	
+
 	private static Logger log = LoggerFactory.getLogger(TokenFilter.class);
-	
+
 	@Value("${server.port}")
 	private String serverPort;
 
@@ -30,7 +30,7 @@ public class TokenFilter extends ZuulFilter {
 	 */
 	@Override
 	public boolean shouldFilter() {
-
+		System.out.println("过滤生效");
 		return false;
 	}
 
@@ -39,9 +39,9 @@ public class TokenFilter extends ZuulFilter {
 	 */
 	@Override
 	public Object run() {
-		
+
 		System.out.println("开启拦截功能!!!");
-		
+
 		// 获取上下文
 		RequestContext currentContext = RequestContext.getCurrentContext();
 		// 获取request
@@ -55,7 +55,7 @@ public class TokenFilter extends ZuulFilter {
 			currentContext.setResponseBody("userToken is null");
 			return null;
 		}
-		
+
 		// 否则正常执行业务逻辑.....
 		System.out.println("网关服务器端口:" + serverPort);
 		return null;

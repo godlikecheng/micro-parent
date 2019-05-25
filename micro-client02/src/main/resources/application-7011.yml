@@ -1,0 +1,55 @@
+# 服务端口号
+server:
+  port: 7011
+# Zuul网关名称
+spring: 
+ application: 
+  name: micro-client02
+# Eureka的配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8000/eureka/,http://127.0.0.1:8010/eureka/
+  instance:
+    # 服务名以"IP地址:服务端口号"来显示
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipaddress}:${server.port}
+    # Eureka客户端向服务端发送心跳的时间间隔，单位为毫秒（客户端告诉服务端自己会按照该规则）
+    lease-renewal-interval-in-seconds: 10000
+    # Eureka服务端在收到最后一次心跳之后等待的时间上限，单位为毫秒，超过则剔除（客户端告诉服务端按照此规则等待自己）
+    lease-expiration-duration-in-seconds: 30000
+    
+# Zuul的配置
+zuul:
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+    
+# Hystrix的配置
+# 开启Hystrix断路器
+feign:
+  hystrix:
+    enabled: true
+# 禁止（关闭）Hystrix服务超时时间
+hystrix:  
+  command: 
+    default:
+      execution:
+#        timeout:
+#          enabled: false
+        # 设置Hystrix服务超时时间
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+
+# Ribbon的配置(Fegin和Zuul => 默认开启了Ribbon负载均衡)
+ribbon: 
+  # 指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间。
+  ReadTimeout: 5000
+  # 指的是建立连接后从服务器读取到可用资源所用的时间。
+  ConnectTimeout: 5000
+
+# Swagger扫描包
+swagger:
+  base-package: micro.client.controller
+
