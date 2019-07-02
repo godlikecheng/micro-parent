@@ -4,7 +4,7 @@
     (2) Vue                  √
     (3) BootStrap            √
     (4) jQuery               √
-    (5) echarts              √
+    (5) ECharts              √
 
 # 后端使用技术:
     (1) Java                 √
@@ -35,9 +35,10 @@
     (4) Ribbon               √
     (5) Fegin                √
 
-# 大数据技术(后期引进):
+# 大数据技术:
     (1) Hadoop
     (2) Kafka
+    (3) RabbitMQ
 
 # 其他技术:
     (1) GitHub               √

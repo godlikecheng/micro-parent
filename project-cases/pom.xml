@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.1.RELEASE</version>
+        <artifactId>micro-parent</artifactId>
+        <groupId>kim.chengcheng</groupId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>project-cases</artifactId>
@@ -36,6 +36,17 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- SpringBoot整合eureka客户端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!-- SpringBoot整合Fegin客户端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
     </dependencies>
 
     <!-- 注意： 这里必须要添加， 否者各种依赖有问题 -->
@@ -52,7 +63,7 @@
     </repositories>
 
     <build>
-        <!-- 打成war包的名称 -->
+        <!-- 打成jar包的名称 -->
         <finalName>project-cases</finalName>
         <plugins>
             <!-- 打包插件 -->

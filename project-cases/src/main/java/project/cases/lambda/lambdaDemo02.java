@@ -32,7 +32,7 @@ public class lambdaDemo02 {
 		Runnable race2 = () -> System.out.println("Hello world 4 !");
 		System.out.println("-----------------------------");
 
-		// 直接调用 run 方法(没开新线程哦!)
+		// 直接调用 run 方法(没开新线程!)
 		race1.run();
 		race2.run();
 
