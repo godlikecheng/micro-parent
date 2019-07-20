@@ -15,11 +15,12 @@
     (6) Token                √
     (7) SSO                  √
     (8) Swagger              √
+    (9) RabbitMQ             √
 
 # 数据库使用技术:
     (1) MySQL                √
     (2) Oracle               √
-    (3) PostgresSQL
+    (3) PostgresSQL          √
     (4) Redis                √
 
 # 服务器使用技术:
