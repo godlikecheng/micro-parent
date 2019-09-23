@@ -16,8 +16,6 @@
         <module>micro-client01</module>
         <module>micro-client02</module>
         <module>project-cases</module>
-        <module>project-thread</module>
-        <module>project-thread</module>
     </modules>
 
     <parent>

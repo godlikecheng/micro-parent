@@ -9,7 +9,8 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8000/eureka/,http://127.0.0.1:8010/eureka/
+#      defaultZone: http://127.0.0.1:8000/eureka/,http://127.0.0.1:8010/eureka/
+      defaultZone: http://139.107.250.117:8000/eureka/,http://39.107.250.117:8010/eureka/
   instance:
     # 服务名以"IP地址:服务端口号"来显示
     prefer-ip-address: true
