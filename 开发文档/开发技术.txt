@@ -39,7 +39,7 @@
 # 大数据技术:
     (1) Hadoop
     (2) Kafka
-    (3) RabbitMQ
+    (3) RabbitMQ             √
 
 # 其他技术:
     (1) GitHub               √

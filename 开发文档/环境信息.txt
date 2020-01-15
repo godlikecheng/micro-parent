@@ -73,7 +73,7 @@
     #. 日志:
         - /var/log/rabbitmq/rabbit@iZhtibonvdglowZ-sasl.log
         - /var/log/rabbitmq/rabbit@iZhtibonvdglowZ.log
-    #. RabbitMQ管理台地址: http://39.xxx.xxx.xxx:15672/  账户:guest || 密码: guest
+    #. RabbitMQ管理台地址: http://39.xxx.xxx.xxx:15672/  账户:xxxxx || 密码: xxxxx
     #. 基础操作:
         - rabbitmqctl add_user username password: 添加用户
         - rabbitmqctl list_users: 列出所有用户
